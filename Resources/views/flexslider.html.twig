@@ -1,0 +1,17 @@
+<div class="flexslider">
+    <ul class="slides">
+        {% for imagen in entity.imagenes %}
+            {% if imagen.published %}
+                {% if width is defined %}
+                    <li>
+                        <img src="{{ imagen.webpath(width) }}" alt="" />
+                    </li>
+                {% else %}
+                    <li>
+                        <img src="{{ imagen.webpath(1024) }}" alt="" />
+                    </li>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+    </ul>
+</div>

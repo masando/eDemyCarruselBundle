@@ -1,0 +1,7 @@
+services:
+    edemy.carrusel:
+        class: "eDemy\CarruselBundle\Controller\CarruselController"
+        calls:
+            - [setEventDispatcher, ["@event_dispatcher"]]
+        tags:
+            - { name: kernel.event_subscriber }

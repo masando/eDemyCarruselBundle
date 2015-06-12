@@ -1,0 +1,37 @@
+{#
+$(function(){
+    //if(!flux.browser.supportsTransitions)
+        //alert("Flux Slider requires a browser that supports CSS3 transitions");
+        
+    $.when(window.f = new flux.slider('#slider', {
+        autoplay: false,
+        pagination: false,
+        controls: true,
+        captions: false,
+        width: '100%',
+        transitions: [ 'blocks' ],
+        delay: 5000,
+    })).done(myWidth());
+    $(window).resize(myWidth());
+});
+
+function myWidth() {
+    //w = $(window).width();
+    w = '100%';
+    h = 'auto';
+    $('#slider .fluxslider').css("width", w);
+    $('#slider .fluxslider').css("height", h);
+    $('#slider .fluxslider .images').css("background-size", w);
+    $('#slider .fluxslider .images div').css("background-size", w);
+    $('#slider .fluxslider .images div div').css("background-size", w);
+
+    //$('#slider .fluxslider .images').css("background-size", h);
+    //$('#slider .fluxslider .images div').css("background-size", h);
+    //$('#slider .fluxslider .images div div').css("background-size", h);
+}
+
+#}
+
+$(window).load(function() {
+    $('.flexslider').flexslider();
+});

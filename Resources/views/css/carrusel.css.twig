@@ -1,0 +1,58 @@
+#slider {
+    {% if params['#slider width'] is defined -%}
+        width: {{ params['#slider width'] }};
+    {% else %}
+        width: 800px;
+    {% endif %}
+
+    {% if params['#slider height'] is defined -%}
+        height: {{ params['#slider height'] }};
+    {% else %}
+        height: 533px;
+    {% endif %}
+    display:block;
+    overflow:hidden;
+    margin: 10px auto;
+    {# 
+    position: absolute;
+    top: 0;
+    left:0;
+    #}
+    z-index:-99;
+} 
+#slider img {
+    width:100%;
+    height: 100%;
+}
+
+#edemy_carruselbundle_carrusel_imagenes > div {
+    border: 1px solid black;
+    padding: 15px;
+    margin-bottom: 15px;
+    overflow: auto;
+    zoom: 1;
+}
+
+#edemy_carruselbundle_carrusel_imagenes img {
+}
+
+@media screen and (min-width:551px) {
+    #edemy_carruselbundle_carrusel_imagenes > div {
+        position: relative;
+        min-width: 300px;
+    }
+
+    #edemy_carruselbundle_carrusel_imagenes img {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+    }
+}
+
+@media screen and (max-width:550px) {
+    #edemy_carruselbundle_carrusel_imagenes > div {
+    }
+
+    #edemy_carruselbundle_carrusel_imagenes img {
+    }
+}

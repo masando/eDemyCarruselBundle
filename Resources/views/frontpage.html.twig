@@ -1,0 +1,14 @@
+<div id="slider">
+    {% for imagen in entity.imagenes %}
+        {% if imagen.published %}
+            {% if width is defined %}
+                <img src="{{ imagen.webpath(width) }}" alt="" />
+            {% else %}
+                <img src="{{ imagen.webpath(1024) }}" alt="" />
+            {% endif %}
+        {# 
+        <a href="/"><img src="/images/9eb5a72359d60b71ca9b91a3793fe5d69289a105.png" alt="" title="" /></a>
+        #}
+        {% endif %}
+    {% endfor %}
+</div> 
